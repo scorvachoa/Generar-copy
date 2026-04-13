@@ -1,4 +1,10 @@
-.env
-/env
-images/
-.env
+﻿.env
+env/
+.venv/
+__pycache__/
+outputs/
+procesadas.json
+*.pyc
+build/
+dist/
+*.spec
