@@ -1,5 +1,5 @@
 ﻿# Generar-copy
-Generador de copys para Facebook a partir de imágenes usando Gemini (UI en PyQt5).
+Generador de copys para Facebook a partir de imágenes usando Gemini (UI en tkinter).
 
 ## Requisitos
 - Windows 10/11
@@ -34,10 +34,13 @@ GEMINI_MODEL=gemini-2.5-flash
 python app.py
 ```
 
+También puedes usar el ejecutable compilado en `dist/GenerarCopy.exe`.
+
 ## Interfaz
-- UI moderna con PyQt5 (tema oscuro).
+- UI con tkinter (tema oscuro moderno, estilo GitHub Dark).
 - Permite cargar claves por línea o desde un `.txt`.
-- Botón “Actualizar claves” con confirmación.
+- Botón "Actualizar claves" con confirmación.
+- Diseño tipo card con acento índigo.
 
 ## Salida
 - Se genera un archivo por ejecución en `outputs/` con timestamp.
@@ -45,10 +48,13 @@ python app.py
 
 ## Estructura del proyecto
 - `app.py` → entry point
-- `ui/qt_app.py` → UI PyQt5
+- `ui/tk_app.py` → UI tkinter
 - `services/` → lógica de Gemini y validaciones
 - `storage/` → persistencia de `.env` y procesadas
 - `core/paths.py` → rutas base
 
-## Notas
-- Para empaquetar a `.exe` se recomienda PyInstaller (no incluido aquí).
+## Compilar a .exe
+```bash
+pip install pyinstaller
+pyinstaller --onefile --windowed --icon assets/copy.ico --name GenerarCopy app.py
+```

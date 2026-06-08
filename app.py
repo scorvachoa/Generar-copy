@@ -1,4 +1,4 @@
-﻿from ui.qt_app import run_app
+from ui.tk_app import run_app
 
 
 if __name__ == "__main__":
